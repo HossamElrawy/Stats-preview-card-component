@@ -10,9 +10,6 @@ The stats preview card consists of two main sections:
 
 The design is fully responsive, adjusting for different screen widths, from large desktop screens to mobile devices.
 
-### Screenshot
-
-![Preview](./images/preview.jpg)
 
 ## Features
 - **Responsive Design**: Adjusts layout and typography based on screen width.
