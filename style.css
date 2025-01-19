@@ -1,0 +1,186 @@
+/* Reset margins and paddings, and set box-sizing to border-box globally */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(233, 47%, 7%); /* Dark background color */
+  display: flex; /* Flexbox for centering content */
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: "Inter"; /* Set font family */
+}
+
+/* Main container styling */
+main {
+  width: 77.1%; /* Width of main container */
+  display: grid; /* Grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-rows: 1fr; /* Single row */
+  background-color: hsl(
+    244,
+    38%,
+    16%
+  ); /* Slightly lighter background for the main section */
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* Prevents overflow from the child elements */
+}
+
+/* Image container within the main */
+main .img-box {
+  position: relative; /* Positioned relative for overlay positioning */
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Desktop image styling */
+.desktop-image {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover the area while maintaining aspect ratio */
+  object-position: center; /* Center the image */
+  filter: brightness(0.5); /* Lower brightness for overlay effect */
+  border-top-right-radius: 0.5rem; /* Round the top-right corner */
+  border-bottom-right-radius: 0.5rem; /* Round the bottom-right corner */
+}
+
+/* Image overlay styling */
+.image-overlay {
+  position: absolute; /* Positioned absolutely inside the img-box */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(
+    277,
+    64%,
+    61%,
+    0.7
+  ); /* Violet overlay with transparency */
+  mix-blend-mode: color; /* Blend the overlay with the image */
+}
+
+/* Left section containing text */
+.left-section {
+  padding: 4.75rem 6.7rem 4.125rem 4.44rem; /* Large padding */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  row-gap: 2rem; /* Space between elements */
+}
+
+/* Flex container for stats */
+.stats-flex {
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: space-between; /* Space out items */
+  padding-right: 2.375rem; /* Right padding */
+}
+
+/* Heading text styling */
+.get-text {
+  font-weight: 700; /* Bold font weight */
+  font-size: 1.875rem; /* Large font size */
+  color: hsl(0, 0%, 100%); /* White color */
+}
+
+/* Highlighted insights text */
+.insights-text {
+  color: hsl(277, 64%, 61%); /* Violet color */
+}
+
+/* Subheading text styling */
+.discover-text {
+  padding-right: 2.375rem; /* Right padding */
+  color: hsla(0, 0%, 100%, 0.6); /* Lightened white color */
+  font-size: 0.75rem; /* Smaller font size */
+  margin-bottom: 3rem; /* Bottom margin */
+  line-height: 1.25rem; /* Line height for readability */
+}
+
+/* Stats text styling */
+.stats-text {
+  font-size: 24px; /* Font size for stats */
+  font-weight: 500; /* Medium weight */
+  color: hsl(0, 0%, 100%); /* White color */
+  margin-bottom: 0.5rem; /* Space below */
+}
+
+/* Temporary text styling (labels) */
+.temp-text {
+  color: hsla(0, 0%, 100%, 0.6); /* Lightened white color */
+  font-family: "Lexend Deca"; /* Specific font family */
+  font-size: 0.6875rem; /* Smaller font size */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+/* Media query for medium screens (1000px to 801px) */
+@media (max-width: 1000px) and (min-width: 801px) {
+  main .left-section {
+    padding: 4rem; /* Smaller padding for medium screens */
+    width: 100%; /* Full width */
+  }
+}
+
+/* Media query for small screens (800px and below) */
+@media (max-width: 800px) {
+  /* Left section adjustments for small screens */
+  .left-section {
+    padding: 1rem; /* Smaller padding */
+    order: 2; /* Stack the left section below the image */
+  }
+
+  /* Main container changes */
+  main {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  /* Image box adjustments */
+  .img-box {
+    order: 1; /* Stack the image box first */
+  }
+
+  /* Desktop image adjustments */
+  .desktop-image {
+    border-bottom-right-radius: 0rem; /* Remove bottom-right border radius */
+    border-top-left-radius: 0.5rem; /* Round top-left corner */
+  }
+
+  /* Body adjustments */
+  body {
+    padding: 1rem 0; /* Smaller body padding */
+    height: auto; /* Allow height to adjust dynamically */
+  }
+
+  /* Heading text on small screens */
+  .get-text {
+    text-align: center; /* Center the text */
+    font-size: 1.7rem; /* Slightly smaller font size */
+  }
+
+  /* Subheading text on small screens */
+  .discover-text {
+    text-align: center; /* Center the text */
+    padding: 0rem 1.5rem; /* Adjust padding */
+    margin: 0; /* Remove margin */
+  }
+
+  /* Stats section adjustments for small screens */
+  .stats-flex {
+    flex-direction: column; /* Stack stats vertically */
+    align-items: center; /* Center align items */
+    row-gap: 1rem; /* Add gap between stats */
+    padding-right: 0rem; /* Remove right padding */
+  }
+
+  /* Stats text adjustments */
+  .stats-text {
+    text-align: center; /* Center align stats text */
+    margin-bottom: 0.25rem; /* Adjust margin */
+  }
+}
